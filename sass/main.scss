@@ -1,0 +1,274 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+body {
+  height: 100%;
+}
+@mixin mt($top) {
+  margin-top: #{$top}rem;
+}
+@mixin mb($bottom) {
+  margin-bottom: #{$top}rem;
+}
+@mixin my($tb) {
+  margin: #{$tb}rem 0;
+}
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+.logo {
+  width: 18rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  &--space {
+    justify-content: space-between;
+  }
+}
+.container {
+  width: calc(100% - 30px);
+  max-width: 180rem;
+  border-radius: 26px;
+  display: grid;
+  grid-template-columns: 35rem 1fr 35rem;
+  border: 1px solid rgb(237, 237, 237);
+  margin: 0 auto;
+}
+
+.aside {
+  &--left {
+    grid-column: 1 / 2;
+  }
+  &--right {
+    grid-column: 3 / 4;
+  }
+}
+.wrapper {
+  margin: 5rem;
+}
+
+.main {
+  grid-column: 2 / 3;
+  background: rgb(249, 249, 249);
+}
+
+.form {
+  flex: 1;
+  &-group {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+  }
+  &-control {
+    width: 92%;
+    padding: 2rem 2rem 2rem 3.8rem;
+    outline: none;
+    border-radius: 6px;
+    border: 0.1rem solid rgb(238, 238, 238);
+    background: url(../images/svg/search.svg) no-repeat 12px, #fff;
+  
+    background-size: 2rem;
+  }
+}
+
+.label {
+  border-radius: 6px;
+  display: block;
+  width: 6rem;
+  background: #e15c43;
+  padding: 1.5rem;
+  cursor: pointer;
+}
+.heading_h3 {
+  font-size: 2rem;
+}
+.heading_h4 {
+  font-size: 1.8rem;
+}
+
+.bell--icon {
+  width: 2.5rem;
+  margin-right: 2rem;
+  position: relative;
+  &::after {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    content: "";
+    width: 42%;
+    height: 42%;
+    border-radius: 50%;
+    background: rgb(230, 51, 51);
+  }
+}
+
+.nav {
+  list-style: none;
+  width: 100%;
+  &--item {
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+    padding: 2rem 1rem;
+    transition: all 300ms;
+    &:hover {
+      background: rgb(228, 228, 228);
+      border-radius: 6px;
+    }
+  }
+}
+.icon {
+  width: 2.5rem;
+  display: block;
+}
+
+.text {
+  text-align: left;
+  font-size: 1.8rem;
+  margin-left: 2rem;
+}
+.active {
+  background: rgb(228, 228, 228);
+  border-radius: 6px;
+}
+.main--heading--h1 {
+  font-size: 2.3rem;
+  margin: 4rem 0;
+}
+.nav {
+  @include mt(10);
+}
+.my {
+  @include my(5);
+}
+.cards {
+  @include my(3);
+}
+.card {
+  margin: 3rem 0;
+  padding: 1.3rem;
+  background: #fff;
+  border-radius: 2px;
+
+  display: flex;
+  &--image {
+    flex: 1;
+    padding: 3rem;
+    background: #ffecdf;
+    width: 20rem;
+    border-radius: 8px;
+  }
+  &--details {
+    flex: 1;
+    margin: 3rem;
+    display: flex;
+    flex-direction: column;
+  }
+  &__social {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  &__badge {
+    width: 12rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__text {
+    line-height: 1.5;
+    font-size: 1.8rem;
+  }
+  &__more {
+    .lesson:first-child{
+list-style: none;
+    }
+    margin-top: auto;
+    display: flex;
+    // width: 50%;
+    font-size: 1.8rem;
+    justify-content: space-between;
+  }
+}
+.social {
+  &--rate {
+    display: block;
+    width: 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  &--bookmark {
+    display: block;
+    width: 2.2rem;
+  }
+}
+.badge {
+  @include my(1);
+  display: block;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  &--a {
+    color: #99afeb;
+    background: #f1f4fa;
+  }
+  &--b {
+    color: #e57923;
+    background: #ffebdd;
+  }
+}
+.mt {
+  @include mt(1.5);
+}
+
+.user_profil {
+  display: flex;
+}
+.event {
+  &__month {
+    @include my(3);
+  }
+  &__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+  &__cards {
+    @include my(3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__cal {
+    padding: 0.8rem 1.3rem;
+    background: rgb(39, 151, 242);
+    border-radius: 6px;
+    color: white;
+    text-align: center;
+    font-size: 1.4rem;
+    &--gray {
+      background: rgb(186, 186, 186);
+      color: rgb(39, 151, 242);
+    }
+  }
+  &__text {
+    margin-top: 0.5rem;
+  }
+}
+
+.overlay {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgb(235, 235, 235);
+}
+
